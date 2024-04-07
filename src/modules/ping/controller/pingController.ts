@@ -9,9 +9,12 @@ interface PingResponse {
 export default class PingController {
   @Get("/")
   public async getMessage(): Promise<PingResponse> {
+    const a = 2;
+
     return {
-      message: "hello",
+      message: "hello" + a,
     };
+
   }
 
   @Get("/:exampleText")
