@@ -7,6 +7,16 @@ interface PingResponse {
 @Tags("ping")
 @Route("ping")
 export default class PingController {
+  @Get("/getTest")
+  public async getTest(): Promise<PingResponse> {
+    const a = 2;
+
+    return {
+      message: "hello" + a,
+    };
+
+  }
+
   @Get("/")
   public async getMessage(): Promise<PingResponse> {
     const a = 2;

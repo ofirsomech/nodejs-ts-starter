@@ -1,8 +1,8 @@
-import express, { Application, Request, Response } from "express";
 import morgan from "morgan";
+import routes from "./route";
 import bodyParser from "body-parser";
 import swaggerUi from "swagger-ui-express";
-import routes from "./route";
+import express, { Application } from "express";
 import { handleError } from "./shared/models/errors/ErrorHandler.middleware";
 
 
@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 
 app.use(routes);
 app.use(handleError);
-
+ 
 app.use(
   "/docs",
   swaggerUi.serve,

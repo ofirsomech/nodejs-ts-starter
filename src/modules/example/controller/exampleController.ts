@@ -23,7 +23,6 @@ export class ExampleController {
     public async getById(@Path() id: number): Promise<ExampleDTO> {
         const example = await getExampleById(id);
         return mapToExampleDTO(example!);
-
     }
 
     @Put("/{id}")
